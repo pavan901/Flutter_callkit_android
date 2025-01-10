@@ -3,7 +3,7 @@ const cors = require("cors");
 const morgan = require("morgan");
 const admin = require("firebase-admin");
 const { v4: uuidv4 } = require("uuid");
-const serviceAccount = require("./callkit-3ec73-firebase-adminsdk-ghfto-9d9fc7a362.json"); // Path to your Firebase service account key
+const serviceAccount = require(""); // Path to your Firebase service account key
 
 const app = express();
 
@@ -16,7 +16,7 @@ app.use(morgan("dev"));
 // Initialize Firebase Admin SDK
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://callkit-3ec73-default-rtdb.firebaseio.com", // Replace with your Firebase database URL
+  databaseURL: "", // Replace with your Firebase database URL
 });
 
 app.get("/", (req, res) => {
